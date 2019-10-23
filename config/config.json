@@ -1,18 +1,18 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
-    "database": "exampledb",
+    "password": "",
+    "database": "wyeoak",
     "host": "localhost",
-    "port": "8889",
+    "port": "3306",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "root",
-    "database": "testdb",
+    "database": "wyeoak",
     "host": "127.0.0.1",
-    "port": "8889",
+    "port": "3306",
     "socketPath": "~travis/.my.cnf",
     "dialect": "mysql",
     "logging": false
@@ -20,7 +20,7 @@
   "ci": {
     "username": "root",
     "password": "root",
-    "database": "testdb",
+    "database": "wyeoak",
     "host": "127.0.0.1",
     "socketPath": "~travis/.my.cnf",
     "dialect": "mysql",
