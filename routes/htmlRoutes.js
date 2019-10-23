@@ -1,4 +1,6 @@
 var db = require("../models");
+require("dotenv").config();
+var google = process.env.GOOGLE_KEY;
 
 module.exports = function(app) {
   // Load index page
@@ -17,6 +19,7 @@ module.exports = function(app) {
     res.render("results", {
       //msg: "Welcome!",
       // examples: dbExamples
+      google: google
     });
     //});
   });
