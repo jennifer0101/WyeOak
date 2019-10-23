@@ -1,3 +1,14 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #EFEFEF;
+  color: #A9A9A9;
+}
+
+.title {
+  font-family: 'Baloo', cursive;
+}
+
