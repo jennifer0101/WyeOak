@@ -1,55 +1,96 @@
-<div class="container">
-  <div class="row">
-    <div class="col l12">
-      <h2 class="title">Travel Buddy</h2>
-      <h4 class="title">Plan Your Road Trip</h4>
-    </div>
+<div class="row banner z-depth-2">
+  <div class="col l12" id="mainTitle">
+    <div class="title">Travel Buddy!</div>
+    <div class="subtitle">Plan Your Road Trip</div>
   </div>
-
+</div>
+<div class="container">
   <!--Form-->
   <div class="row">
-    <form class="col l12">
-      <div class="row">
-        <div class="input-field col s12">
-          <input placeholder="Enter your starting location." id="startLocation" type="text" class="validate">
-          <label for="startLocation">Starting Location</label>
+    <form class="col l12" id="mainForm">
+      <div class="col l4">
+        <div class="formWrapper">
+          <div class="subtitleTwo">Enter Your Starting Location</div>
+          <div class="row">
+            <div class="input-field col s8">
+              <input id="cityStart" type="text" class="validate">
+              <label for="cityStart">City</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="stateStart" type="text" class="validate">
+              <label for="stateStart">State</label>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input placeholder="Enter your first stop." id="stopOne" type="text" class="validate">
-          <label for="stopOne">Stop One</label>
+      <div class="col l4">
+        <div class="formWrapper">
+          <div class="subtitleTwo">Enter Your First Stop</div>
+          <br>
+          <div class="row">
+            <div class="input-field col s8">
+              <input id="cityStopOne" type="text" class="validate">
+              <label for="cityStopOne">City</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="stateStopOne" type="text" class="validate">
+              <label for="stateStopOne">State</label>
+            </div>
+          </div>
+          <div class="subtitleTwo">Enter Your Second Stop</div>
+          <br>
+          <div class="row">
+            <div class="input-field col s8">
+              <input id="cityStopTwo" type="text" class="validate">
+              <label for="cityStopTwo">City</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="stateStopTwo" type="text" class="validate">
+              <label for="stateStopTwo">State</label>
+            </div>
+          </div>
+          <div class="subtitleTwo">Enter Your Third Stop</div>
+          <br>
+          <div class="row">
+            <div class="input-field col s8">
+              <input id="cityStopThree" type="text" class="validate">
+              <label for="cityStopThree">City</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="stateStopThree" type="text" class="validate">
+              <label for="stateStopThree">State</label>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input placeholder="Enter your second stop." id="stopTwo" type="text" class="validate">
-          <label for="stopTwo">Stop Two</label>
+      <div class="col l4">
+        <div class="formWrapper">
+          <div class="subtitleTwo">Enter Your Final Destination</div>
+          <br>
+          <div class="row">
+            <div class="input-field col s8">
+              <input id="cityEnd" type="text" class="validate">
+              <label for="cityEnd">City</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="stateEnd" type="text" class="validate">
+              <label for="stateEnd">State</label>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!--Reset, Submit, Save Trip Buttons-->
       <div class="row">
-        <div class="input-field col s12">
-          <input placeholder="Enter your third stop." id="stopThree" type="text" class="validate">
-          <label for="stopThree">Stop Three</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input placeholder="Enter your final destination." id="endingLocation" type="text" class="validate">
-          <label for="endingLocation">Final Destination</label>
-        </div>
-      </div>
-      <!--Reset and Submit Buttons-->
-      <div class="row">
-        <div class="col l12">
+        <div class="col l12 center-align">
           <!--Note: Link to results page-->
-          <a class="waves-effect waves-light btn" id="resetButton">Reset</a>
-          <button class="btn waves-effect waves-light" id="submitButton" type="submit" name="action">Submit
+          <a class="waves-effect waves-light btn-small red darken-1" id="resetButton">Reset</a>
+          <button class="btn-small waves-effect waves-light red darken-1" id="submitButton" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
           </button>
+          <a class="waves-effect waves-light btn-small red darken-1" id="saveTripButton">Save Trip</a>
         </div>
       </div>
     </form>
   </div>
 </div>
-
