@@ -6,17 +6,12 @@ module.exports = function(app) {
   //.then() res.json and put the call inside the function istelf instead of handlebars
   app.post("/api/results", function(req, res) {
     db.wyeoak
-      .findone({
-        where: {
-          address: $("#startLocation")
-            .val()
-            .trim()
-        },
-        attributes: ["address"]
+      .create({
+        city: req.body.city,
+        statae: req.body.state
       })
-      .then(function(res) {
-        res.status(200).json();
-        var address = $(this).data("wyeoak");
+      .then(function(dbwyeoak) {
+        res.json(dbwyeoak);
       });
   });
 };
