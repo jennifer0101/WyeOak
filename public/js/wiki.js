@@ -1,62 +1,62 @@
 $("#submitButton").on("click", function(event) {
   event.preventDefault();
 
-  var locations = [];
+  var locations = {};
   // Make a newChirp object
-  var startLocation = {
-    city: $("#cityStart")
+  var startLocation =
+    $("#cityStart")
       .val()
-      .trim(),
-    state: $("#stateStart")
+      .trim() +
+    ", " +
+    $("#stateStart")
       .val()
-      .trim()
-  };
+      .trim();
 
-  var firstStop = {
-    city: $("#cityStopOne")
+  var firstStop =
+    $("#cityStopOne")
       .val()
-      .trim(),
-    state: $("#stateStopOne")
+      .trim() +
+    ", " +
+    $("#stateStopOne")
       .val()
-      .trim()
-  };
+      .trim();
 
-  var secondStop = {
-    city: $("#cityStopTwo")
+  var secondStop =
+    $("#cityStopTwo")
       .val()
-      .trim(),
-    state: $("#stateStopTwo")
+      .trim() +
+    ", " +
+    $("#stateStopTwo")
       .val()
-      .trim()
-  };
+      .trim();
 
-  var thirdStop = {
-    city: $("#cityStopThree")
+  var thirdStop =
+    $("#cityStopThree")
       .val()
-      .trim(),
-    state: $("#stateStopThree")
+      .trim() +
+    ", " +
+    $("#stateStopThree")
       .val()
-      .trim()
-  };
+      .trim();
 
-  var endLocation = {
-    city: $("#cityEnd")
+  var endLocation =
+    $("#cityEnd")
       .val()
-      .trim(),
-    state: $("#stateEnd")
+      .trim() +
+    ", " +
+    $("#stateEnd")
       .val()
-      .trim()
-  };
+      .trim();
 
-  locations.push(startLocation);
-  locations.push(firstStop);
-  locations.push(secondStop);
-  locations.push(thirdStop);
-  locations.push(endLocation);
+  locations.a = startLocation;
+  locations.b = firstStop;
+  locations.c = secondStop;
+  locations.d = thirdStop;
+  locations.e = endLocation;
   console.log(locations);
 
   // Send an AJAX POST-request with jQuery
-  $.post("/api/new", locations)
+  $.post("/api/all", locations)
     // On success, run the following code
     .then(function() {
       var row = $("<div>");
