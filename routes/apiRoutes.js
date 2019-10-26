@@ -1,28 +1,69 @@
-// var db = require("../models");
+var db = require("../models");
+const axios = require("axios");
 
-// module.exports = {
-//   postExampleApi: async function(req, res) {
-//     const dbExample = await db.Example.create(req.body);
-//     res.json(dbExample);
-//   },
-//   api: function(app) {
-//     // Get all examples
-//     app.get("/api/examples", function(req, res) {
-//       db.Example.findAll({}).then(function(dbExamples) {
-//         res.json(dbExamples);
-//       });
-//     });
+module.exports = function(app) {
+  app.post("/api/new", function(req, res) {
+    console.log(req.body);
+    var addressStart = req.body[0].city + ", " + req.body[0].state;
+    var addressFirst = req.body[1].city + ", " + req.body[1].state;
+    var addressSecond = req.body[2].city + ", " + req.body[2].state;
+    var addressStart = req.body[3].city + ", " + req.body[3].state;
+    var addressStart = req.body[4].city + ", " + req.body[4].state;
 
-//     // Create a new example
-//     app.post("/api/examples", this.postExampleApi);
+    //console.log(address);
+    axios({
+      method: "GET",
+      url: "https://apidojo-booking-v1.p.rapidapi.com/locations/auto-complete",
+      headers: {
+        "content-type": "application/octet-stream",
+        "x-rapidapi-host": "apidojo-booking-v1.p.rapidapi.com",
+        "x-rapidapi-key": "d4b7b82a1fmshf554c1d06b69e08p16af5ejsneb8e4a16b5e3"
+      },
+      params: {
+        languagecode: "en-us",
+        text: "Saint Paul, MN"
+      }
+    })
+      .then(response => {
+        console.log("here"); //response)
+        /*
+               for (var i = 0; i < 5; i++)
+               {
+                    db.Destination.create({
+                        city: req.body[i].city,
+                        state: req.body[i].state,
+                    }).then(function(results) {
+                        res.end();
+                    });
+                }
 
-//     // Delete an example by id
-//     app.delete("/api/examples/:id", function(req, res) {
-//       db.Example.destroy({ where: { id: req.params.id } }).then(function(
-//         dbExample
-//       ) {
-//         res.json(dbExample);
-//       });
-//     });
-//   }
-// };
+                */
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    /*
+        Destinations.create({
+            author: req.body.author,
+            body: req.body.body,
+            created_at: req.body.created_at,
+        }).then(function(results) {
+            // `results` here would be the newly created chirp
+            res.end();
+        });
+
+ */
+  });
+  /*
+    app.get("/api/all", function(req, res) {
+
+        //console.log(temp[0].data);
+        //return res.json(temp[0]);
+        /*
+        db.Destination.findAll({}).then(function(results) {
+            // results are available to us inside the .then
+            res.json(results);
+        });
+
+         */
+};
