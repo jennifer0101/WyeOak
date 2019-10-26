@@ -4,7 +4,8 @@ module.exports = function(sequelize, DataTypes) {
     //address: DataTypes.STRING,
     name: DataTypes.STRING,
     city: DataTypes.STRING,
-    state: DataTypes.STRING
+    state: DataTypes.STRING,
+    label: DataTypes.STRING
   });
   return destinations;
   
