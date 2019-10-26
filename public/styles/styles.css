@@ -1,14 +1,112 @@
-.list-group-item {
-  line-height: 2.5;
+.banner {
+  background-color: #caebf2;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 50px;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #EFEFEF;
-  color: #A9A9A9;
+  font-family: "Montserrat", sans-serif;
+  background-color: #efefef;
+  color: #7a7979;
 }
 
 .title {
-  font-family: 'Baloo', cursive;
+  font-size: 90px;
+  font-weight: bold;
+  font-family: "Baloo", cursive;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 45px;
+  padding-bottom: 0px;
 }
 
+.subtitle {
+  font-size: 45px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 25px;
+  padding-top: 0px;
+}
+
+.headingTop {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 0px;
+}
+
+.headingBottom {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 50px;
+}
+
+.subtitleTwo {
+  text-align: center;
+  color: #3a3939;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#resetButton {
+  margin: 50px 10px 100px 10px;
+  border-radius: 30px 10px;
+}
+
+#saveTripButton {
+  margin: 50px 10px 100px 10px;
+  border-radius: 30px 10px;
+}
+
+#submitButton {
+  margin: 50px 10px 100px 10px;
+  border-radius: 30px 10px;
+}
+
+#returnOne {
+  border-radius: 30px 10px;
+}
+
+#returnTwo {
+  border-radius: 30px 10px;
+}
+
+.returnButton {
+  float: right;
+  border-radius: 30px 10px;
+}
+
+.input-field {
+  padding: 15px;
+}
+
+.formWrapper {
+  width: 75%;
+}
+
+.contentsWrapper {
+  float: right;
+}
+
+.googleMap {
+  text-align: center;
+}
+
+.input-field input[type="text"]:focus + label,
+.materialize-textarea:focus:not([readonly]) + label {
+  color: #e53935 !important;
+}
+
+.input-field input[type="text"]:focus,
+.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #e53935 !important;
+  box-shadow: 0 1px 0 0 #e53935 !important;
+}
