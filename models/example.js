@@ -6,4 +6,5 @@ module.exports = function(sequelize, DataTypes) {
     state: DataTypes.STRING
   });
   return destinations;
+  
 };
