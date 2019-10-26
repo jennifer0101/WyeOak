@@ -14,4 +14,18 @@ module.exports = function(app) {
         res.json(dbwyeoak);
       });
   });
+
+  app.post("/api/results/:name", function(req, res) {
+    db.wyeoak
+      .findOne({
+        where: {
+          name: req.params.name
+        },
+        attributes: ["city", "state"]
+      })
+      .then(function(results) {
+        var googleCall =
+          "https://www.google.com/maps/embed/v1/place?key={{google}}&q=res.json(results)";
+      });
+  });
 };
