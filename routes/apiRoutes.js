@@ -1,28 +1,22 @@
-// var db = require("../models");
+var db = require("../models");
 
-// module.exports = {
-//   postExampleApi: async function(req, res) {
-//     const dbExample = await db.Example.create(req.body);
-//     res.json(dbExample);
-//   },
-//   api: function(app) {
-//     // Get all examples
-//     app.get("/api/examples", function(req, res) {
-//       db.Example.findAll({}).then(function(dbExamples) {
-//         res.json(dbExamples);
-//       });
-//     });
-
-//     // Create a new example
-//     app.post("/api/examples", this.postExampleApi);
-
-//     // Delete an example by id
-//     app.delete("/api/examples/:id", function(req, res) {
-//       db.Example.destroy({ where: { id: req.params.id } }).then(function(
-//         dbExample
-//       ) {
-//         res.json(dbExample);
-//       });
-//     });
-//   }
-// };
+module.exports = function(app) {
+  //post route that listens for click
+  //then grabs the info
+  //.then() res.json and put the call inside the function istelf instead of handlebars
+  app.post("/api/results", function(req, res) {
+    db.wyeoak
+      .findone({
+        where: {
+          address: $("#startLocation")
+            .val()
+            .trim()
+        },
+        attributes: ["address"]
+      })
+      .then(function(res) {
+        res.status(200).json();
+        var address = $(this).data("wyeoak");
+      });
+  });
+};
