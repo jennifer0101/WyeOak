@@ -20,7 +20,6 @@ module.exports = function(app) {
     res.render("results", {
       //msg: "Welcome!",
       // examples: dbExamples
-      google: google
     });
     //});
   });
