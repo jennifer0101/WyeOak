@@ -1,3 +1,24 @@
+//Materialize Scrollspy, Pushpin, Dropdown initializations
+$(document).ready(function() {
+  $(".scrollspy").scrollSpy();
+  $(".pushpin").pushpin();
+  $(".dropdown-trigger").dropdown();
+});
+
+//Logic to cause second stop and third stop to hide, and then appear when button is clicked
+$(document).ready(function() {
+  $("#stopTwo").hide();
+  $("#stopThree").hide();
+  $("#moreButton1").on("click", function() {
+    $("#moreButton1").hide();
+    $("#stopTwo").show();
+  });
+  $("#moreButton2").on("click", function() {
+    $("#moreButton2").hide();
+    $("#stopThree").show();
+  });
+});
+
 $("#submitButton").on("click", function(event) {
   event.preventDefault();
 

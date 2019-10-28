@@ -1,16 +1,29 @@
 <div class="row banner z-depth-2">
   <div class="col l12" id="mainTitle">
     <div class="title">Travel Buddy!</div>
-    <div class="subtitle">Plan Your Road Trip</div>
+    <div class="subtitle">here to help you find your way</div>
   </div>
 </div>
+
 <div class="container">
+
   <!--Form-->
   <div class="row">
-    <form class="col l12" id="mainForm">
-      <div class="col l4">
-        <div class="formWrapper">
-          <div class="subtitleTwo">Enter Your Starting Location</div>
+    <form class="col l12">
+      <div class="col l12">
+        <div class="formInputs">
+          <div class="subtitleTwo">Name Your Trip</div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix" id="buddy">mood</i>
+              <input id="nameTrip" type="text" class="validate">
+              <label for="nameTrip">Trip Name</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="formInputs">
+          <div class="subtitleTwo">Current Location</div>
           <div class="row">
             <div class="input-field col s8">
               <input id="cityStart" type="text" class="validate">
@@ -22,10 +35,9 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col l4">
-        <div class="formWrapper">
-          <div class="subtitleTwo">Enter Your First Stop</div>
+
+        <div class="formInputs" id="stopOne">
+          <div class="subtitleTwo">Stops along the way?</div>
           <br>
           <div class="row">
             <div class="input-field col s8">
@@ -36,7 +48,13 @@
               <input id="stateStopOne" type="text" class="validate">
               <label for="stateStopOne">State</label>
             </div>
+            <div class="center-align">
+              <a class="waves-effect waves-light btn-small grey lighten-1" id="moreButton1">More Stops?</a>
+            </div>
           </div>
+        </div>
+
+        <div class="formInputs" id="stopTwo">
           <div class="subtitleTwo">Enter Your Second Stop</div>
           <br>
           <div class="row">
@@ -48,7 +66,14 @@
               <input id="stateStopTwo" type="text" class="validate">
               <label for="stateStopTwo">State</label>
             </div>
+            <div class="center-align">
+              <a class="waves-effect waves-light btn-small grey lighten-1" id="moreButton2">More Stops?</a>
+            </div>
           </div>
+        </div>
+
+
+        <div class="formInputs" id="stopThree">
           <div class="subtitleTwo">Enter Your Third Stop</div>
           <br>
           <div class="row">
@@ -62,10 +87,10 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col l4">
-        <div class="formWrapper">
-          <div class="subtitleTwo">Enter Your Final Destination</div>
+
+
+        <div class="formInputs">
+          <div class="subtitleTwo">Final Destination</div>
           <br>
           <div class="row">
             <div class="input-field col s8">
@@ -78,17 +103,25 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!--Reset, Submit, Save Trip Buttons-->
-      <div class="row">
-        <div class="col l12 center-align">
-          <!--Note: Link to results page-->
-          <a class="waves-effect waves-light btn-small red darken-1" id="resetButton">Reset</a>
-          <button class="btn-small waves-effect waves-light red darken-1" id="submitButton" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
-          </button>
-          <a class="waves-effect waves-light btn-small red darken-1" id="saveTripButton">Save Trip</a>
+        <div class="row">
+          <div class="center-align">
+            <div class="input-field col l12">
+              
+              <!-- Saved Trips -->
+              <a class="btn-small waves-effect waves-light red darken-1" id="saveTripButton" href="trips">Saved
+                Trips</a>
+
+              <!--Reset Button-->
+              <a class="waves-effect waves-light btn-small red darken-1" id="resetButton" href="/">Reset</a>
+
+              <!--Submit Button-->
+              <button class="btn-small waves-effect waves-light red darken-1" id="submitButton" type="submit"
+                name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </form>
