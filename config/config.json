@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "jimmy1121",
+    "password": "",
     "database": "wyeoak",
     "host": "localhost",
     "port": "3306",
