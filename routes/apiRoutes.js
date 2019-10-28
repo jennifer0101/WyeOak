@@ -30,26 +30,32 @@ module.exports = function(app) {
     })
       .then(response => {
         console.log(response.data[0].name); //response)
+        var mapLabel = response.data[0].label;
+        for (var i = 0; i < mapLabel.length; i++) {
+          mapLabel = mapLabel.replace(" ", "+");
+          mapLabel = mapLabel.replace(",", "");
+        }
 
         db.Destinations.create({
+          name: 1,
           city: response.data[0].name,
           state: response.data[0].region,
-          label: response.data[0].label
+          label: mapLabel
         }).then(function(results) {
           res.end();
         });
         /*
-               for (var i = 0; i < 5; i++)
-               {
-                    db.Destination.create({
-                        city: req.body[i].city,
-                        state: req.body[i].state,
-                    }).then(function(results) {
-                        res.end();
-                    });
-                }
+                 for (var i = 0; i < 5; i++)
+                 {
+                      db.Destination.create({
+                          city: req.body[i].city,
+                          state: req.body[i].state,
+                      }).then(function(results) {
+                          res.end();
+                      });
+                  }
 
-                */
+                  */
       })
       .catch(error => {
         console.log(error);
@@ -66,16 +72,14 @@ module.exports = function(app) {
 
  */
   });
-  /*
-    app.get("/api/all", function(req, res) {
-
-        //console.log(temp[0].data);
-        //return res.json(temp[0]);
-        /*
-        db.Destination.findAll({}).then(function(results) {
-            // results are available to us inside the .then
-            res.json(results);
-        });
-
-         */
+  app.get("/api/all", function(req, res) {
+    db.Destination.findOne({
+      where: {
+        name: 1
+      }
+    }).then(function(results) {
+      // results are available to us inside the .then
+      res.json(results);
+    });
+  });
 };
