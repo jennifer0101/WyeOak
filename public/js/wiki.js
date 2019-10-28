@@ -77,13 +77,6 @@ $("#submitButton").on("click", function(event) {
   console.log(locations);
 
   // Send an AJAX POST-request with jQuery
-  $.post("/api/all", locations)
-    // On success, run the following code
-    .then(function() {
-      var row = $("<div>");
-      row.addClass("start");
-
-      row.append("<p>" + startLocation.city + "</p>");
-      $("body").prepend(row);
-    });
+  $.post("/api/all", locations);
+  // On success, run the following code
 });
