@@ -24,10 +24,11 @@ module.exports = function(app) {
       .then(response => {
         console.log(response.data[0].name); //response)
         var mapLabel = response.data[0].label;
-        for (var i = 0; i < mapLabel.length; i++) {
+        /*for (var i = 0; i < mapLabel.length; i++) {
           mapLabel = mapLabel.replace(" ", "+");
           mapLabel = mapLabel.replace(",", "");
         }
+         */
 
         db.Destinations.create({
           name: 1,
