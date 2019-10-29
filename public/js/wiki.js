@@ -3,12 +3,18 @@ $(document).ready(function() {
   $(".scrollspy").scrollSpy();
   $(".pushpin").pushpin();
   $(".dropdown-trigger").dropdown();
-});
 
-//Logic to cause second stop and third stop to hide, and then appear when button is clicked
-$(document).ready(function() {
+  //Hide the speech bubbles
+  $("#bubbleName").hide();
+  $("#bubbleView").hide();
+  $("#bubbleSubmit").hide();
+  $("#bubbleMore").hide();
+  $("#bubbleBuddy").hide();
+
+  //Logic to cause second stop and third stop to hide, and then appear when button is clicked
   $("#stopTwo").hide();
   $("#stopThree").hide();
+
   $("#moreButton1").on("click", function() {
     $("#moreButton1").hide();
     $("#stopTwo").show();
@@ -16,6 +22,52 @@ $(document).ready(function() {
   $("#moreButton2").on("click", function() {
     $("#moreButton2").hide();
     $("#stopThree").show();
+  });
+
+  //Show the speech bubbles when mouseover the five specified areas
+  //Name Your Trip
+  $("#hoverName").mouseenter(function() {
+    $("#bubbleName").show();
+  });
+
+  $("#hoverName").mouseleave(function() {
+    $("#bubbleName").hide();
+  });
+
+  //Save Your Trip
+  $("#saveTripButton").mouseenter(function() {
+    $("#bubbleView").show();
+  });
+
+  $("#saveTripButton").mouseleave(function() {
+    $("#bubbleView").hide();
+  });
+
+  //Submit Your Form
+  $("#submitButton").mouseenter(function() {
+    $("#bubbleSubmit").show();
+  });
+
+  $("#submitButton").mouseleave(function() {
+    $("#bubbleSubmit").hide();
+  });
+
+  //More Stops
+  $("#moreButton1").mouseenter(function() {
+    $("#bubbleMore").show();
+  });
+
+  $("#moreButton1").mouseleave(function() {
+    $("#bubbleMore").hide();
+  });
+
+  //Travel Buddy says Hello
+  $("#buddy").mouseenter(function() {
+    $("#bubbleBuddy").show();
+  });
+
+  $("#buddy").mouseleave(function() {
+    $("#bubbleBuddy").hide();
   });
 });
 

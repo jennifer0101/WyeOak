@@ -9,15 +9,16 @@
 
   <!--Form-->
   <div class="row">
-    <form class="col l12">
-      <div class="col l12">
+    <div class="col s12 m10 l11">
+      <form>
         <div class="formInputs">
-          <div class="subtitleTwo">Name Your Trip</div>
-          <div class="row">
-            <div class="input-field col s12">
-              <i class="material-icons prefix" id="buddy">mood</i>
-              <input id="nameTrip" type="text" class="validate">
-              <label for="nameTrip">Trip Name</label>
+          <div id="hoverName">
+            <div class="subtitleTwo">Name Your Trip</div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="nameTrip" type="text" class="validate">
+                <label for="nameTrip">Trip Name</label>
+              </div>
             </div>
           </div>
         </div>
@@ -72,7 +73,6 @@
           </div>
         </div>
 
-
         <div class="formInputs" id="stopThree">
           <div class="subtitleTwo">Enter Your Third Stop</div>
           <br>
@@ -87,7 +87,6 @@
             </div>
           </div>
         </div>
-
 
         <div class="formInputs">
           <div class="subtitleTwo">Final Destination</div>
@@ -107,7 +106,7 @@
         <div class="row">
           <div class="center-align">
             <div class="input-field col l12">
-              
+
               <!-- Saved Trips -->
               <a class="btn-small waves-effect waves-light red darken-1" id="saveTripButton" href="trips">Saved
                 Trips</a>
@@ -123,7 +122,33 @@
             </div>
           </div>
         </div>
+
+      </form>
+    </div>
+    <div class="col hide-on-small-only m2 l1 buddyWrapper">
+      <div id="buddy">
+        <i class="medium material-icons">mood</i>
+        <div id="bubbleName">
+          <p class="border animated tdDropInRight">Name your road trip and I'll save it for you.
+          </p>
+        </div>
+        <div id="bubbleView">
+          <p class="border animated tdDropInRight">Click here and I'll show you your saved trips.
+          </p>
+        </div>
+        <div id="bubbleSubmit">
+          <p class="border animated tdDropInRight">Submit the form for route and hotel suggestions.
+          </p>
+        </div>
+        <div id="bubbleMore">
+          <p class="border animated tdDropInRight">Enter up to three different stops on your trip.
+          </p>
+        </div>
+         <div id="bubbleBuddy">
+          <p class="border animated tdStampInSwing">Hello! I'm your road trip Travel Buddy!
+          </p>
+        </div>
       </div>
-    </form>
+    </div>
   </div>
 </div>
