@@ -76,6 +76,9 @@ $("#submitButton").on("click", function(event) {
 
   var locations = {};
   // Make a newChirp object
+  var tripName = $("#nameTrip")
+    .val()
+    .trim();
   var startLocation =
     $("#cityStart")
       .val()
@@ -121,11 +124,12 @@ $("#submitButton").on("click", function(event) {
       .val()
       .trim();
 
-  locations.a = startLocation;
-  locations.b = firstStop;
-  locations.c = secondStop;
-  locations.d = thirdStop;
-  locations.e = endLocation;
+  locations[0] = tripName;
+  locations[1] = startLocation;
+  locations[2] = firstStop;
+  locations[3] = secondStop;
+  locations[4] = thirdStop;
+  locations[5] = endLocation;
   console.log(locations);
 
   // Send an AJAX POST-request with jQuery
