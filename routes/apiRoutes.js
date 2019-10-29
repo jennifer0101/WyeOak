@@ -1,20 +1,13 @@
 var db = require("../models");
-const axios = require("axios");
 
 module.exports = function(app) {
+  //post route that listens for click
+  //then grabs the info
+  //.then() res.json and put the call inside the function istelf instead of handlebars
+
+  const axios = require("axios");
+
   app.post("/api/all", function(req, res) {
-    //console.log(req.body.a);
-    /*
-    for (var i = 0; i < req.body.)
-    var addressStart = req.body[0].city + ", " + req.body[0].state;
-    var addressFirst = req.body[1].city + ", " + req.body[1].state;
-    var addressSecond = req.body[2].city + ", " + req.body[2].state;
-    var addressStart = req.body[3].city + ", " + req.body[3].state;
-    var addressStart = req.body[4].city + ", " + req.body[4].state;
-
-
-     */
-    //console.log(address);
     axios({
       method: "GET",
       url: "https://apidojo-booking-v1.p.rapidapi.com/locations/auto-complete",
@@ -45,18 +38,6 @@ module.exports = function(app) {
         }).then(function(results) {
           res.end();
         });
-        /*
-                 for (var i = 0; i < 5; i++)
-                 {
-                      db.Destination.create({
-                          city: req.body[i].city,
-                          state: req.body[i].state,
-                      }).then(function(results) {
-                          res.end();
-                      });
-                  }
-
-                  */
       })
       .catch(error => {
         console.log(error);
@@ -73,14 +54,29 @@ module.exports = function(app) {
 
  */
   });
-  app.get("/api/maps", function(req, res) {
+
+  app.get("api/results", function(req, res) {
+    //console.log(temp[0].data);
+    //return res.json(temp[0]);
+
     db.Destinations.findOne({
       where: {
-        name: 1
-      }
+        id: 1
+      },
+      attributes: ["label"]
     }).then(function(results) {
       // results are available to us inside the .then
-      res.json(results);
+      console.log(results);
+      app.get("/api/all", function(req, res) {
+        db.Destination.findOne({
+          where: {
+            name: 1
+          }
+        }).then(function(results) {
+          // results are available to us inside the .then
+          res.json(results);
+        });
+      });
     });
   });
 };
