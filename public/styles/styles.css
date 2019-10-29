@@ -107,6 +107,10 @@ body {
   float: right;
 }
 
+.buddyWrapper {
+  float: right;
+}
+
 .googleMap {
   text-align: center;
 }
@@ -116,6 +120,7 @@ body {
   width: 60%;
 }
 
+/* Change default color of Materialize forms */
 .input-field input[type="text"]:focus + label,
 .materialize-textarea:focus:not([readonly]) + label {
   color: #e53935 !important;
@@ -125,4 +130,45 @@ body {
 .materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #e53935 !important;
   box-shadow: 0 1px 0 0 #e53935 !important;
+}
+
+/* Speech Bubble */
+/* Make our Buddy icon relative */
+#buddy {
+  position: relative;
+  margin-top: 250px;
+}
+
+#bubbleName {
+  animation-duration: 4s;
+}
+/* Bubble */
+p.border {
+  position: absolute;
+  width: 300px;
+  background: #efefef;
+  padding: 15px;
+  margin: 20px 0 40px 40px;
+  color: #3a3939;
+  font-size: 20px;
+  text-align: center;
+  line-height: 40px;
+  border: 10px solid #e53935;
+  -webkit-border-radius: 180px;
+  -moz-border-radius: 180px;
+  border-radius: 180px;
+  right: -100px;
+  top: -208px;
+}
+
+/* triangle */
+p.border:before {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 120px;
+  border-width: 25px 25px 0 25px;
+  border-style: solid;
+  border-color: #e53935 transparent;
+  display: block;
 }
