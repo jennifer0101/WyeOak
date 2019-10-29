@@ -9,7 +9,6 @@ module.exports = function(app) {
     res.render("index", {
       //msg: "Welcome!",
       //examples: dbExamples
-      google: "12345"
     });
     //});
   });

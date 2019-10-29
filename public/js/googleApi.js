@@ -1,10 +1,11 @@
 // require("dotenv").config();
 //  var google = process.env.GOOGLE_KEY;
 // console.log(google);
-$.get("/results", function(data) {
+$.get("/api/map", function(data) {
   console.log(data);
-  let jarf = $("#apiCall").attr("src");
-  console.log(jarf);
-
-  $("#apiCall").attr("src", jarf + "&q=" + data.label);
+  $("#apiCall").attr(
+    "src",
+    "https://www.google.com/maps/embed/v1/place?key=AIzaSyDA7yGe9xdaHgiQbrY2YmxmTh1yz1C09jI&q=" +
+      data.label
+  );
 });
