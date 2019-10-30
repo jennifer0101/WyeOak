@@ -72,7 +72,7 @@ $(document).ready(function() {
 });
 
 $("#submitButton").on("click", function(event) {
-  //event.preventDefault();
+  event.preventDefault();
   $.get("/result");
   var locations = {};
   // Make a newChirp object
@@ -143,14 +143,15 @@ $.get("/api/hotel", function(data) {
     var row = $("<div>");
     row.addClass("hotelSingle");
 
-    row.append("<h1>" + data[i].label + "</h1>");
-    row.append("<p>" + data[i].hotel1 + "</p>");
-    row.append("<img src=" + data[i].hotel1Img + ">");
-    row.append("<p>" + data[i].hotel2 + "</p>");
-    row.append("<img src=" + data[i].hotel2Img + ">");
-    row.append("<p>" + data[i].hotel3 + "</p>");
-    row.append("<img src=" + data[i].hotel3Img + ">");
+    row.prepend("<img src=" + data[i].hotel1Img + ">");
+    row.prepend("<h6>" + data[i].hotel1 + "</h6>");
 
+    row.prepend("<img src=" + data[i].hotel2Img + ">");
+    row.prepend("<h6>" + data[i].hotel2 + "</h6>");
+    row.prepend("<img src=" + data[i].hotel3Img + ">");
+    row.prepend("<h6>" + data[i].hotel3 + "</h6>");
+
+    row.prepend("<h1>" + data[i].label + "</h1>");
     $("#hotels").prepend(row);
   }
 });
