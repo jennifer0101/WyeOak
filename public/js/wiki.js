@@ -72,8 +72,8 @@ $(document).ready(function() {
 });
 
 $("#submitButton").on("click", function(event) {
-  event.preventDefault();
-
+  //event.preventDefault();
+  $.get("/result");
   var locations = {};
   // Make a newChirp object
   var tripName = $("#nameTrip")
@@ -135,4 +135,22 @@ $("#submitButton").on("click", function(event) {
   // Send an AJAX POST-request with jQuery
   $.post("/api/all", locations);
   // On success, run the following code
+});
+
+$.get("/api/hotel", function(data) {
+  console.log(data);
+  for (var i = 0; i < data.length; i++) {
+    var row = $("<div>");
+    row.addClass("hotelSingle");
+
+    row.append("<h1>" + data[i].label + "</h1>");
+    row.append("<p>" + data[i].hotel1 + "</p>");
+    row.append("<img src=" + data[i].hotel1Img + ">");
+    row.append("<p>" + data[i].hotel2 + "</p>");
+    row.append("<img src=" + data[i].hotel2Img + ">");
+    row.append("<p>" + data[i].hotel3 + "</p>");
+    row.append("<img src=" + data[i].hotel3Img + ">");
+
+    $("#hotels").prepend(row);
+  }
 });
