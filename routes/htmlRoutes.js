@@ -26,7 +26,7 @@ module.exports = function(app) {
   // Load trips page
   app.get("/trips", function(req, res) {
     // db.Example.findAll({}).then(function(dbExamples) {
-    res.render("trips", {
+    res.render("results", {
       //msg: "Welcome!",
       // examples: dbExamples
     });
